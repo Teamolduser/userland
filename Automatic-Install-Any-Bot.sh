@@ -119,7 +119,23 @@ wget https://github.com/"${usrnme}"/"${repo}"/raw/main/package.json
 
 ls
 
-yarn install 
+cusport() {
+echo " Please Write Y For Yes or y For yes and N For No or n For no"
+echo
+	read -n1 -p " Do You Want To Setup For Termux and Userland" atlas
+	if [[ ${atlas} =~ ^([yY])$ ]]; then
+	wget https://github.com/amlok-1/userland/raw/main/yarn-lock
+	mv yarn-lock yarn.lock
+	yarn upgrade 
+			
+	else 
+	
+		echo -ne "\n\n Wait For Installation \n\n"
+		yarn install 
+	fi
+}
+
+cusport;
 
 cd ..
 
@@ -162,17 +178,13 @@ clear
 # -------------------------xxxxxxxxxxxxxxxxxxxxxxxxxxx-------------------------
 figlet olduser
 
-
-
-
-
-
-
-
 # -------------------------------------( Thank You )-----------------------------------------------
 
 echo "Thank You"
 
-clear
+echo 'BOT STARTING  PROCESS HAS BEEN STARTED'
 
-echo "BOT STARTING  PROCESS HAS BEEN STARTED"
+clear
+exit
+exit
+exit
